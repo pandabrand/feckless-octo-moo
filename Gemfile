@@ -38,3 +38,10 @@ gem 'padrino', '0.13.0'
 
 #testing
 gem 'rspec-html-matchers'
+
+#stripe/payment/currency gems
+gem 'stripe', '1.29.1'
+gem 'money'
+
+#environment
+gem 'dotenv'

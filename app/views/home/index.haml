@@ -1,5 +1,12 @@
 %h1= 'Welcome to Darkside Taco'
 
 %form{:name => 'taco-form', :id => 'taco-form', :action => '/order', :method => 'POST'}
-  .order-item
-  %button{:type => 'submit', :id => 'submit-btn', :value => 'Order'}
+  %dl
+  - for product in @products
+    .order-item
+      %dt
+        %h3= product.name
+        %p= product.description
+        %p= "$#{Money.new product.skus.data.first.price, product.skus.data.first.currency}"
+      
+  %button{:type => 'submit'} Order Tacos

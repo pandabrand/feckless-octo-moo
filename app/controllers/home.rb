@@ -20,6 +20,7 @@ Darksidetwo::App.controllers :home do
   # end
   
   get :index, :map => '/' do
+    @products = Stripe::Product.all :active => true
     render 'home/index'
   end
 

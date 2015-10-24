@@ -16,4 +16,8 @@ RSpec.describe "/" do
   it "finds order items on the page" do
     expect(last_response.body).to have_tag 'div', :with => { :class => 'order-item' }
   end
+  
+  it "finds the order button" do
+    expect(last_response.body).to have_tag 'button', :with => { :type => 'submit' }
+  end
 end
