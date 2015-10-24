@@ -1,0 +1,5 @@
+%h1= 'Welcome to Darkside Taco'
+
+%form{:name => 'taco-form', :id => 'taco-form', :action => '/order', :method => 'POST'}
+  .order-item
+  %button{:type => 'submit', :id => 'submit-btn', :value => 'Order'}

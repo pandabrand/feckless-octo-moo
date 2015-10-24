@@ -20,7 +20,7 @@ Darksidetwo::App.controllers :home do
   # end
   
   get :index, :map => '/' do
-    'Welcome to Darkside Taco'
+    render 'home/index'
   end
 
 end

@@ -18,12 +18,15 @@ GEM
       treetop (~> 1.4.8)
     metaclass (0.0.4)
     mime-types (1.25.1)
+    mini_portile (0.6.2)
     minitest (5.8.1)
     mocha (1.1.0)
       metaclass (~> 0.0.1)
     moneta (0.7.20)
     mustermann19 (0.4.0)
       enumerable-lazy
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
     padrino (0.13.0)
       padrino-admin (= 0.13.0)
       padrino-cache (= 0.13.0)
@@ -74,6 +77,9 @@ GEM
     rspec-expectations (3.3.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
+    rspec-html-matchers (0.7.0)
+      nokogiri (~> 1)
+      rspec (~> 3)
     rspec-mocks (3.3.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
@@ -102,6 +108,7 @@ DEPENDENCIES
   rack-test
   rake
   rspec
+  rspec-html-matchers
   sass
 
 BUNDLED WITH

@@ -35,3 +35,6 @@ gem 'padrino', '0.13.0'
 # %w(core support gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.13.0'
 # end
+
+#testing
+gem 'rspec-html-matchers'
