@@ -1,0 +1,14 @@
+%h1= 'Contact and Delivery Information'
+
+%form{ :name => 'delivery-form', :id => 'delivery-form', :action => '/purchase', :method => 'POST' }
+  .delivery-item
+    %label{ :for => 'phone'} Phone Number
+    %input{ :type => 'text', :name => 'phone', :placeholder => 'Ex. 3125551234', :required => true }
+  .delivery-item
+    %label{ :for => 'address'} Address or Location
+    %textarea{ :name => 'address', :rows => '4', :placeholder => 'Ex. 2313 N. Milwaukee or Cafe Moustache', :required => true }
+  .delivery-item
+    %label{ :for => 'notes'} Notes (any food subsitution or allergies and any delivery notes
+    %textarea{ :name => 'notes', :rows => '4' , :placeholder => 'Ex. Corn tortillas instead of flour, no onions. Buzzer broken please call.' }
+  .delivery-item
+    %button{:type => 'submit'} Submit Contact/Delivery Info 

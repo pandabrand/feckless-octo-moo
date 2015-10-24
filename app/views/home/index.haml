@@ -8,5 +8,5 @@
         %h3= product.name
         %p= product.description
         %p= "$#{Money.new product.skus.data.first.price, product.skus.data.first.currency}"
-      
+        %input{:type => 'number', :name => product.id, :min => 0, :max => 10}
   %button{:type => 'submit'} Order Tacos
