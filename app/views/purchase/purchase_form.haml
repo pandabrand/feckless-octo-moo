@@ -1,0 +1,4 @@
+%h1= 'Payment'
+
+%form{:name => 'payment-form', :action => :thanks, :method => 'POST'}
+  %javascript{:src => "https://checkout.stripe.com/checkout.js", :class => "stripe-button", "data-key" => settings.publishable_key, "data-locale" => "auto", "data-name" => "Darkside Taco", "data-label" => "Buy Tacos", "data-allow-remember-me" => "true"}
