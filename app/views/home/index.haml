@@ -1,6 +1,8 @@
 %h1= 'Welcome to Darkside Taco'
 
-%form{:name => 'taco-form', :id => 'taco-form', :action => '/order', :method => 'POST'}
+%form{:name => 'taco-form', :id => 'taco-form', :action => :order, :method => 'POST'}
+  %csrf_meta_tags
+  %csrf_token_field
   %dl
   - for product in @products
     .order-item

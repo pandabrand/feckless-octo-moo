@@ -18,11 +18,8 @@ Darksidetwo::App.controllers :location do
   # get '/example' do
   #   'Hello world!'
   # end
-  get :delivery, :map => '/delivery' do
-    render 'location/delivery'
-  end
-
-  post :order, :map => '/order' do
+  
+  post :delivery, :map => '/order' do
     render 'location/delivery'
   end
 end

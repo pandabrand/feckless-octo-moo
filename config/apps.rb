@@ -28,8 +28,8 @@
 Padrino.configure_apps do
   # enable :sessions
   set :session_secret, 'd87ed8c695d5b5057bf40bacbfaf465348b35e17392d205763f039e30c03389f'
-  set :protection, :except => :path_traversal
-  set :protect_from_csrf, true
+  set :protection, :except => :session_hijacking
+  set :protect_from_csrf, production?
   
   #Stripe set
   set :publishable_key, ENV['PUBLISHABLE_KEY']

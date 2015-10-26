@@ -10,7 +10,7 @@ RSpec.describe "/" do
   end
   
   it "finds the order form on the page" do
-    expect(last_response.body).to have_form '/order', 'POST'
+    expect(last_response.body).to have_form 'order', 'POST'
   end
   
   it "finds order items on the page" do

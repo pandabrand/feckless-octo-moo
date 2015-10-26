@@ -2,7 +2,7 @@ require 'spec_helper'
 
 RSpec.describe "/purchase" do
   before do
-	get "/purchase"
+	post "purchase"
   end
 
   it "returns purhcase title" do

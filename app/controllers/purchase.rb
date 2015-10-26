@@ -19,12 +19,8 @@ Darksidetwo::App.controllers :purchase do
   #   'Hello world!'
   # end
   
-  get :purchase, :map => '/purchase' do
-    render 'purchase/purchase_form'
-  end
-  
   post :purchase, :map => '/purchase' do
-
+    render 'purchase/purchase_form'
   end
 
 end
