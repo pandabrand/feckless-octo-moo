@@ -10,6 +10,7 @@ require 'dotenv'
 Dotenv.load
 
 require 'stripe'
+require 'money'
 ##
 # ## Enable devel logging
 #

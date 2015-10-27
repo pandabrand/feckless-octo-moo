@@ -20,6 +20,9 @@ Darksidetwo::App.controllers :location do
   # end
   
   post :delivery, :map => '/order' do
+  	@items = params.find_all { |item| item[1].to_i > 0 }
+  	session[:order] = Hash.new
+  	session[:order][:items] = Hash[*@items.flatten]
     render 'location/delivery'
   end
 end

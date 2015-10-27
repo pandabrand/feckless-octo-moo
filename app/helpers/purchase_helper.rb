@@ -3,9 +3,9 @@
 module Darksidetwo
   class App
     module PurchaseHelper
-      # def simple_helper_method
-      # ...
-      # end
+	  def make_price_from_product_and_quantity(product, qty)
+		return Money.new(product.skus.data.first.price * qty.to_i, product.skus.data.first.currency)
+	  end
     end
 
     helpers PurchaseHelper
