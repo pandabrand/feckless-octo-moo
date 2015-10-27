@@ -1,14 +1,11 @@
 %h1= 'Welcome to Darkside Taco'
 
-%form{:name => 'taco-form', :id => 'taco-form', :action => :order, :method => 'POST'}
-  %csrf_meta_tags
-  %csrf_token_field
-  %dl
+= form_tag '/order', :name => 'taco-form', :id => 'taco-form', :method => 'POST' do
   - for product in @products
     .order-item
       %dt
         %h3= product.name
         %p= product.description
         %p= "$#{Money.new product.skus.data.first.price, product.skus.data.first.currency}"
-        %input{:type => 'number', :name => product.id, :min => 0, :max => 10}
-  %button{:type => 'submit'} Order Tacos
+        = number_field_tag product.id, :type => 'number', :min => 0, :max => 10
+  = submit_tag  "Order Tacos"
