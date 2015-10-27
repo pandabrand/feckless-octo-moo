@@ -34,7 +34,7 @@ Darksidetwo::App.controllers :thank do
       :currency => 'usd',
       :customer => customer.id,
       :items => items,
-      :metadata => { "phone": phone, "address": address, "notes": notes }
+      :metadata => { "phone"=> phone, "address"=> address, "notes"=> notes }
     )
     
     puts @order
