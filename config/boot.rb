@@ -49,6 +49,9 @@ end
 # Add your after (RE)load hooks here
 #
 Padrino.after_load do
+  Padrino::Application.use BetterErrors::Middleware
+  BetterErrors.application_root = PADRINO_ROOT
+  BetterErrors.logger = Padrino.logger
 end
 
 Padrino.load!
