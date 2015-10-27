@@ -2,12 +2,12 @@
 %html
   %head
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    = csrf_meta_tags
     %title= content_for?(:title) ? yield(:title) : "Darkside Taco"
     = stylesheet_link_tag :application
-    = stylesheet_link_tag :foundation
     = javascript_include_tag 'jquery', 'application'
     = javascript_include_tag 'foundation/foundation.js'
-    = csrf_meta_tags
+    = javascript_include_tag 'foundation/foundation.slider.js'
   %body
     %section.hero
       %div.row.intro
@@ -17,3 +17,5 @@
         %div.small-centered.medium-uncentered.medium-6.large-5.columns
     #main
       = yield
+    %script $(document).foundation();  
+    

@@ -1,11 +1,17 @@
-%h1= 'Welcome to Darkside Taco'
-
+.row
+  %div.small-12.large-6.small-centered.columns
+    %h2= 'Welcome to Darkside Taco'
 = form_tag '/order', :name => 'taco-form', :id => 'taco-form', :method => 'POST' do
   - for product in @products
-    .order-item
-      %dt
+    .row
+      %div.small-12.large-4.columns
         %h3= product.name
+      %div.small-12.large-4.columns
         %p= product.description
-        %p= "$#{Money.new product.skus.data.first.price, product.skus.data.first.currency}"
-        = number_field_tag product.id, :type => 'number', :min => 0, :max => 10
-  = submit_tag  "Order Tacos"
+        %p
+          %strong= "$#{Money.new product.skus.data.first.price, product.skus.data.first.currency}"
+      %div.small-12.large-4.columns
+        = select_tag product.id, :options => ('0'..'5').to_a, :selected => '0'
+  .row
+    %div.small-3.small-centered.columns
+      = submit_tag  "Order Tacos", :class => "button radius"

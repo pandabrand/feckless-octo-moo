@@ -18,8 +18,9 @@ gem 'rake'
 
 # Component requirements
 gem 'compass-blueprint'
-gem 'sass'
+gem 'sass', '3.2.19'
 gem 'haml'
+gem 'compass', '0.12.7'
 
 # Test requirements
 gem 'mocha', :group => 'test', :require => false

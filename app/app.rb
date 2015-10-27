@@ -1,6 +1,5 @@
 module Darksidetwo
   class App < Padrino::Application
-    register SassInitializer
     register Padrino::Mailer
     register Padrino::Helpers
     register CompassInitializer
