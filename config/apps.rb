@@ -35,6 +35,7 @@ Padrino.configure_apps do
   set :publishable_key, ENV['PUBLISHABLE_KEY']
   set :secret_key, ENV['SECRET_KEY']
   Stripe.api_key = settings.secret_key
+  puts 'pub key: ' + settings.publishable_key
 end
 
 # Mounts the core application for this project
