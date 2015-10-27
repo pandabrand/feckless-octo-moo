@@ -29,7 +29,7 @@ Darksidetwo::App.controllers :thank do
     notes = session[:order][:notes]
     items = Array.new
     session[:order][:items].each do |id, qty|
-      items.push({:type => 'sku', :parent => Stripe::Product.retrieve(id).skus.data.first.id, :quantity => qty})} unless id.start_with?('auth')
+      items.push({:type => 'sku', :parent => Stripe::Product.retrieve(id).skus.data.first.id, :quantity => qty}) unless id.start_with?('auth')
     end
     @order = Stripe::Order.create(
       :currency => 'usd',
