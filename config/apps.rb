@@ -29,14 +29,13 @@ Padrino.configure_apps do
   # enable :sessions
   set :session_secret, 'd87ed8c695d5b5057bf40bacbfaf465348b35e17392d205763f039e30c03389f'
   set :protection, :except => :path_traversal
-  set :protect_from_csrf, production?
+  set :protect_from_csrf, true
   
   #Stripe set
   set :publishable_key, ENV['PUBLISHABLE_KEY']
   set :secret_key, ENV['SECRET_KEY']
   Stripe.api_key = settings.secret_key
   Stripe.api_version = "2015-10-16"
-  puts 'pub key: ' + settings.publishable_key
 end
 
 # Mounts the core application for this project

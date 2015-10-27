@@ -25,7 +25,9 @@ Darksidetwo::App.controllers :purchase do
     session[:order][:address] = params[:address]
     session[:order][:notes] = params[:notes]
 	@order_items = Hash.new
-	items.each{|id, qty| @order_items[Stripe::Product.retrieve(id.to_s)] = qty}
+	items.each do|id, qty|
+      @order_items[Stripe::Product.retrieve(id.to_s)] = qty unless id.to_s.start_with?('auth')
+	end  
 	@description = Array.new
 	@order_items.each{|item, qty| @description.push(item.name + ": "  + qty)}
 	@total = @order_items.keys.map{|product| product.skus.data.first.price * @order_items[product].to_i}.inject(0, &:+)

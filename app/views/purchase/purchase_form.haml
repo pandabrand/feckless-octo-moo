@@ -5,5 +5,5 @@
   %p= make_price_from_product_and_quantity item, @order_items[item]
 %h1 Total
 %p=  Money.new @total, "USD"
-%form{:name => 'payment-form', :action => :thanks, :method => 'POST'}
+= form_tag '/thanks', :name => 'payment-form', :method => 'POST' do
   %script{:type => "text/javascript", :src => "https://checkout.stripe.com/checkout.js", "data-key" => settings.publishable_key, :class => "stripe-button", "data-description" => @description.join(" "), "data-amount" => @total, "data-locale" => "auto", "data-name" => "Darkside Taco", "data-label" => "Buy Tacos", "data-allow-remember-me" => "false"}
