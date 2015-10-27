@@ -24,6 +24,9 @@ Darksidetwo::App.controllers :thank do
       :email => params[:stripeEmail],
       :card => params[:stripeToken]
     )
+    phone = session[:order][:phone]
+    address = session[:order][:address]
+    notes = session[:order][:notes]
     items = Array.new
     session[:order][:items].each{|id, qty| items.push({:type => 'sku', :parent => Stripe::Product.retrieve(id).skus.data.first.id, :quantity => qty})}
     
@@ -31,7 +34,7 @@ Darksidetwo::App.controllers :thank do
       :currency => 'usd',
       :customer => customer.id,
       :items => items,
-      :metadata => { "phone": session[:order][:phone], "address": session[:order][:address], "notes": session[:order][:notes] }
+      :metadata => { "phone": phone, "address": address, "notes": notes }
     )
     
     puts @order
