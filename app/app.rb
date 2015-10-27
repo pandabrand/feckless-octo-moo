@@ -3,6 +3,8 @@ module Darksidetwo
     register SassInitializer
     register Padrino::Mailer
     register Padrino::Helpers
+    register CompassInitializer
+
 
     enable :sessions
 

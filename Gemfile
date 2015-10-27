@@ -17,6 +17,7 @@ source 'https://rubygems.org'
 gem 'rake'
 
 # Component requirements
+gem 'compass-blueprint'
 gem 'sass'
 gem 'haml'
 

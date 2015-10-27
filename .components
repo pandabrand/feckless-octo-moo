@@ -4,6 +4,6 @@
 :mock: mocha
 :script: jquery
 :renderer: haml
-:stylesheet: sass
+:stylesheet: compass
 :namespace: Darksidetwo
 :migration_format: number
