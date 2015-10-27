@@ -1,9 +1,9 @@
 .header
   %h1 Payment
 - @order_items.keys.each do |item|
-  %h2= item
+  %h2= item.name
   %p= make_price_from_product_and_quantity item, @order_items[item]
 %h1 Total
 %p=  Money.new @total, "USD"
 %form{:name => 'payment-form', :action => :thanks, :method => 'POST'}
-  %javascript{:src => "https://checkout.stripe.com/checkout.js", :class => "stripe-button", "data-key" => settings.publishable_key, "data-locale" => "auto", "data-name" => "Darkside Taco", "data-label" => "Buy Tacos", "data-allow-remember-me" => "true"}
+  %script{:type => "text/javascript", :src => "https://checkout.stripe.com/checkout.js", :class => "stripe-button", "data-key" => settings.publishable_key, "data-description" => @description.join(" "), "data-amount" => @total, "data-locale" => "auto", "data-name" => "Darkside Taco", "data-label" => "Buy Tacos", "data-allow-remember-me" => "false"}

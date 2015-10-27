@@ -21,7 +21,7 @@ Darksidetwo::App.controllers :purchase do
   
   post :purchase, :map => '/purchase' do
     items = session[:order][:items]
-    session[:order][:phone] = params[:phone]
+    session[:order][:phone] = params[:del_phone]
     session[:order][:address] = params[:address]
     session[:order][:notes] = params[:notes]
 	@order_items = Hash.new
