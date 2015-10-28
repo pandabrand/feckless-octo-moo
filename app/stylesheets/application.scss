@@ -51,4 +51,5 @@ form.bp {
   #content {
     @include column(21, true); } }
 
-@import "custom"
+@import "custom";
+@import "foundation-icons/foundation-icons";

@@ -14,8 +14,11 @@
         %div.small-centered.medium-uncentered.medium-6.large-7.columns
           %h1 Darkside Taco
           %p Late-nite Underground Taco Delivery in Logan Square
+          %p
+            %i.fi-arrow-down.big-arrow
         %div.small-centered.medium-uncentered.medium-6.large-5.columns
     #main
       = yield
+    = partial 'partials/footer'
     %script $(document).foundation();  
     
