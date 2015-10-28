@@ -11,7 +11,11 @@
         %p
           %strong= "$#{Money.new product.skus.data.first.price, product.skus.data.first.currency}"
       %div.small-12.large-4.columns
-        = select_tag product.id, :options => ('0'..'5').to_a, :selected => '0'
+        - if settings.lift_gate
+          = select_tag product.id, :options => ('0'..'5').to_a, :selected => '0'
   .row
     %div.small-3.small-centered.columns
-      = submit_tag  "Order Tacos", :class => "button radius"
+      - if settings.lift_gate
+        = submit_tag  "Order Tacos", :class => "button radius"
+      - else
+        %p Open Most Fridays and Saturdays 9pm to 2:30am

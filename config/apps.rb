@@ -34,6 +34,7 @@ Padrino.configure_apps do
   #Stripe set
   set :publishable_key, ENV['PUBLISHABLE_KEY']
   set :secret_key, ENV['SECRET_KEY']
+  set :lift_gate, ENV['LIFT_GATE'] == 'true'
   Stripe.api_key = settings.secret_key
   Stripe.api_version = "2015-10-16"
 end

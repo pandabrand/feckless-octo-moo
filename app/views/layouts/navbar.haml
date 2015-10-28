@@ -1,0 +1,29 @@
+!!! 5
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    = csrf_meta_tags
+    %title= content_for?(:title) ? yield(:title) : "Darkside Taco"
+    = stylesheet_link_tag :application
+    = javascript_include_tag 'jquery', 'application'
+    = javascript_include_tag 'foundation/foundation.js'
+    = javascript_include_tag 'foundation/foundation.slider.js'
+  %body
+    .row
+      .fixed
+        %nav.top-bar{:data => {:topbar => ''}, :role => "navigation"}
+          %ul.title-area
+            %li.name
+              %h1
+                = link_to 'Darkside Taco', '/'
+            %li.toggle-topbar
+              = link_to 'Menu', '/'
+          %section.top-bar-section
+            %ul.left
+              %li
+    .row.nav-push
+    .row
+      .large-12.columns
+        = yield
+    %script $(document).foundation();  
+    
