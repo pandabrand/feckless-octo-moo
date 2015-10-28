@@ -12,13 +12,13 @@
           %strong= "$#{Money.new product.skus.data.first.price, product.skus.data.first.currency}"
       %div.small-12.large-4.columns
         - if settings.lift_gate
-          = select_tag product.id, :options => ('0'..'5').to_a, :selected => '0'
+          - if product.skus.data.first.inventory.quantity > 0
+            = select_tag product.id, :options => ('0'..'5').to_a, :selected => '0'
+          - else
+            %p SOLD OUT
   .row
     %div.small-3.small-centered.columns
       - if settings.lift_gate
-        - if product.skus.data.first.inventory.quantity > 0
           = submit_tag  "Order Tacos", :class => "button radius"
-        - else
-          %p SOLD OUT
       - else
         %p Open Most Fridays and Saturdays 9pm to 2:30am
