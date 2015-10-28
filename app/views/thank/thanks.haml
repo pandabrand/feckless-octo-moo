@@ -1,2 +1,12 @@
-%h1 Thanks
-%p We are on our way!
+.row
+  %div.small-12.large-6.small-centered.columns  
+    %h1 Thanks
+.row
+  %div.small-12.large-6.small-centered.columns  
+    %p We are on our way!
+  %div.small-12.large-6.small-centered.columns
+    %p Address: #{@address}
+    %p "Phone: #{@phone}
+.row
+  .div small-8.large-4.small-centered.columns
+    = link_to 'Home', '/', :class => 'button radius'

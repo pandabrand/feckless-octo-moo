@@ -1,9 +1,18 @@
-.header
-  %h1 Payment
+.row
+  %div.small-12.large-6.small-centered.columns  
+    %h2 Payment
 - @order_items.keys.each do |item|
-  %h2= item.name
-  %p= make_price_from_product_and_quantity item, @order_items[item]
-%h1 Total
-%p=  Money.new @total, "USD"
-= form_tag '/thanks', :name => 'payment-form', :method => 'POST' do
-  %script{:type => "text/javascript", :src => "https://checkout.stripe.com/checkout.js", "data-key" => settings.publishable_key, :class => "stripe-button", "data-description" => @description.join(" "), "data-amount" => @total, "data-locale" => "auto", "data-name" => "Darkside Taco", "data-label" => "Buy Tacos", "data-allow-remember-me" => "false"}
+  .row
+    %div.small-12.large-6.small-centered.columns  
+      %h3= item.name
+    %div.small-12.large-6.small-centered.columns  
+      %p= make_price_from_product_and_quantity item, @order_items[item]
+.row
+  %div.small-12.large-6.small-centered.columns  
+    %h3 Total
+  %div.small-12.large-6.small-centered.columns  
+    %p= Money.new @total, "USD"
+.row
+  %div.small-9.large-4.small-centered.columns
+    = form_tag '/thanks', :name => 'payment-form', :method => 'POST' do
+      %script{:type => "text/javascript", :src => "https://checkout.stripe.com/checkout.js", "data-key" => settings.publishable_key, :class => "stripe-button", "data-description" => @description.join(" "), "data-amount" => @total, "data-locale" => "auto", "data-name" => "Darkside Taco", "data-label" => "Buy Tacos", "data-allow-remember-me" => "false"}

@@ -24,8 +24,8 @@ Darksidetwo::App.controllers :thank do
       :email => params[:stripeEmail],
       :card => params[:stripeToken]
     )
-    phone = session[:order][:phone]
-    address = session[:order][:address]
+    @phone = session[:order][:phone]
+    @address = session[:order][:address]
     notes = session[:order][:notes]
     items = Array.new
     session[:order][:items].each do |id, qty|
@@ -35,7 +35,7 @@ Darksidetwo::App.controllers :thank do
       :currency => 'usd',
       :customer => customer.id,
       :items => items,
-      :metadata => { "phone"=> phone, "address"=> address, "notes"=> notes }
+      :metadata => { "phone"=> @phone, "address"=> @address, "notes"=> notes }
     )
     
     puts @order

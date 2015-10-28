@@ -1,15 +1,19 @@
-%h1= 'Contact and Delivery Information'
-
+.row
+  %div.small-12.large-6.small-centered.columns  
+    %h3= 'Contact and Delivery Information'
 = form_tag '/purchase', :name => 'delivery-form', :id => 'delivery-form', :method => 'POST' do
-  = field_set_tag do
-    .delivery-item
+  .row
+    %div.small-9.large-4.small-centered.columns
       = label_tag :phone
       = telephone_field_tag :del_phone, :placeholder => 'Ex. 3125551234', :required => true, :value => params[:phone]
-    .delivery-item
+  .row
+    %div.small-12.large-8.small-centered.columns
       = label_tag :address
-      = text_area_tag :address, :rows => '4', :placeholder => 'Ex. 2313 N. Milwaukee or Cafe Moustache', :required => true, :value => params[:address]
-    .delivery-item
+      = text_area_tag :address, :placeholder => 'Ex. 2313 N. Milwaukee or Cafe Moustache', :required => true, :value => params[:address]
+  .row
+    %div.small-12.large-8.small-centered.columns
       = label_tag :notes
-      = text_area_tag :notes, :rows => '4' , :placeholder => 'Ex. Corn tortillas instead of flour, no onions. Buzzer broken please call.', :value => params[:notes]
-    .delivery-item
-      = submit_tag 'Submit Contact/Delivery Info'
+      = text_area_tag :notes, :placeholder => 'Ex. Corn tortillas instead of flour, no onions. Buzzer broken please call.', :value => params[:notes]
+  .row
+    %div.small-9.large-4.small-centered.columns
+      = submit_tag 'Submit Contact/Delivery Info', :class => "button radius"
