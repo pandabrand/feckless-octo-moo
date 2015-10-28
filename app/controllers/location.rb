@@ -18,7 +18,7 @@ Darksidetwo::App.controllers :location do
   # get '/example' do
   #   'Hello world!'
   # end
-  
+  layout :navbar
   post :delivery, :map => '/order' do
   	@items = params.find_all { |item| item[1].to_i > 0 }
   	session[:order] = Hash.new

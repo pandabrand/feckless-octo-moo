@@ -19,6 +19,7 @@ Darksidetwo::App.controllers :purchase do
   #   'Hello world!'
   # end
   
+  layout :navbar
   post :purchase, :map => '/purchase' do
     items = session[:order][:items]
     session[:order][:phone] = params[:del_phone]

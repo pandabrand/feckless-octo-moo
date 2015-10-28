@@ -19,6 +19,7 @@ Darksidetwo::App.controllers :thank do
   #   'Hello world!'
   # end
   
+  layout :navbar
   post :thanks, :map => '/thanks' do
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
