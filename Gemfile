@@ -51,3 +51,6 @@ gem 'dotenv'
 #logging
 gem 'better_errors'
 gem 'binding_of_caller'
+
+#ssl
+gem 'rack-ssl-enforcer'

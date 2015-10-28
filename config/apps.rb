@@ -27,7 +27,7 @@
 #
 Padrino.configure_apps do
   # enable :sessions
-  set :session_secret, 'd87ed8c695d5b5057bf40bacbfaf465348b35e17392d205763f039e30c03389f'
+  set :session_secret, ENV['SESSION_SECRET']
   set :protection, :except => :path_traversal
   set :protect_from_csrf, true
   
@@ -37,6 +37,10 @@ Padrino.configure_apps do
   set :lift_gate, ENV['LIFT_GATE'] == 'true'
   Stripe.api_key = settings.secret_key
   Stripe.api_version = "2015-10-16"
+  
+  if production?
+    use Rack::SslEnforcer
+  end
 end
 
 # Mounts the core application for this project
