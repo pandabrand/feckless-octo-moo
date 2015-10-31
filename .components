@@ -1,5 +1,5 @@
 ---
-:orm: none
+:orm: activerecord
 :test: rspec
 :mock: mocha
 :script: jquery
@@ -7,3 +7,4 @@
 :stylesheet: compass
 :namespace: Darksidetwo
 :migration_format: number
+:admin_renderer: haml

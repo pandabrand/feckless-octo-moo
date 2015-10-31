@@ -1,5 +1,6 @@
 module Darksidetwo
   class App < Padrino::Application
+    use ConnectionPoolManagement
     register Padrino::Mailer
     register Padrino::Helpers
     register CompassInitializer
