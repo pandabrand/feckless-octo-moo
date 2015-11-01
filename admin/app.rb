@@ -34,6 +34,7 @@ module Darksidetwo
 
     access_control.roles_for :admin do |role|
       role.project_module :accounts, '/accounts'
+      role.project_module :orders, '/orders'
     end
 
     # Custom error management 

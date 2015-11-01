@@ -1,0 +1,27 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %td id
+      %td email
+      %td phone
+      %td address
+      %td order
+      %td notes
+      %td date
+    - for order in @orders
+      %tr
+        %td= order.id
+        %td= order.email
+        %td= order.metadata.phone
+        %td= order.metadata.address
+        %td
+          %ul.list-group
+            - for item in order.items
+              %li.list-group-item= pluralize(item.quantity, item.description)
+        %td
+          - if order.metadata.respond_to?("notes")
+            %div.panel.panel-default
+              %div.panel-heading
+                %h3.panel-title Notes
+              %div.panel-body= order.metadata.notes
+        %td= Time.at(order.created).strftime("%l:%M%p %d-%b-%y")
