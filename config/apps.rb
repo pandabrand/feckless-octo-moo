@@ -44,6 +44,4 @@ Padrino.configure_apps do
 end
 
 # Mounts the core application for this project
-
-Padrino.mount("Darksidetwo::Admin", :app_file => Padrino.root('admin/app.rb')).to("/admin")
 Padrino.mount('Darksidetwo::App', :app_file => Padrino.root('app/app.rb')).to('/')
