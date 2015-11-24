@@ -3,9 +3,8 @@
 module Darksidetwo
   class App
     module HomeHelper
-      # def simple_helper_method
-      # ...
-      # end
+      def lift_gate_helper
+      end
     end
 
     helpers HomeHelper

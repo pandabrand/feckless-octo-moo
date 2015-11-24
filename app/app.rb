@@ -52,7 +52,9 @@ module Darksidetwo
     #     disable :asset_stamp # no asset timestamping for dev
     #   end
     #
-
+    configure :development, :test do
+      set :protect_from_csrf, false
+    end
     ##
     # You can manage errors like:
     #
